@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520" role="img" aria-labelledby="title desc">
+<title id="title">XEBAC HAT rotating holographic security core</title>
+<desc id="desc">A continuously rotating cyan, violet and crimson 3D-style orbital security core with a glowing central shield, sweeping scan arcs and orbiting nodes.</desc>
+<defs>
+  <radialGradient id="space"><stop offset="0" stop-color="#142b3b" stop-opacity=".78"/><stop offset=".55" stop-color="#0b1420" stop-opacity=".22"/><stop offset="1" stop-color="#07090d" stop-opacity="0"/></radialGradient>
+  <radialGradient id="sphere"><stop offset="0" stop-color="#e9ffff" stop-opacity=".92"/><stop offset=".14" stop-color="#48e5ed" stop-opacity=".72"/><stop offset=".48" stop-color="#7b61d1" stop-opacity=".34"/><stop offset="1" stop-color="#090e18" stop-opacity=".12"/></radialGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dfffff"/><stop offset=".45" stop-color="#48e5ed"/><stop offset="1" stop-color="#6e77ff"/></linearGradient>
+  <linearGradient id="crimson" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff8ca5"/><stop offset=".55" stop-color="#ff405d"/><stop offset="1" stop-color="#a58bff"/></linearGradient>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="soft" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="24"/></filter>
+  <clipPath id="globeClip"><circle cx="260" cy="242" r="96"/></clipPath>
+</defs>
+<style>
+@keyframes xhSpin{to{transform:rotate(360deg)}}
+@keyframes xhReverse{to{transform:rotate(-360deg)}}
+@keyframes xhPulse{0%,100%{opacity:.62;transform:scale(.96)}50%{opacity:1;transform:scale(1.045)}}
+@keyframes xhScan{0%{stroke-dashoffset:0;opacity:.25}50%{opacity:1}100%{stroke-dashoffset:-220;opacity:.25}}
+.spin-a,.spin-b,.spin-c,.spin-d{transform-box:fill-box;transform-origin:center}
+.spin-a{animation:xhSpin 38s linear infinite}
+.spin-b{animation:xhReverse 31s linear infinite}
+.spin-c{animation:xhSpin 18s linear infinite}
+.spin-d{animation:xhReverse 54s linear infinite}
+.pulse-core{transform-box:fill-box;transform-origin:center;animation:xhPulse 4.8s ease-in-out infinite}
+.scan-arc{animation:xhScan 7s linear infinite}
+@media(prefers-reduced-motion:reduce){.spin-a,.spin-b,.spin-c,.spin-d,.pulse-core,.scan-arc{animation:none!important}}
+</style>
+<circle cx="260" cy="242" r="226" fill="url(#space)"/>
+<circle cx="260" cy="242" r="190" fill="none" stroke="#48e5ed" stroke-opacity=".12" stroke-width="1" stroke-dasharray="2 12"/>
+<circle cx="260" cy="242" r="166" fill="none" stroke="#a58bff" stroke-opacity=".2" stroke-width="1"/>
+<g class="spin-c"><circle cx="260" cy="242" r="206" fill="none" stroke="#48e5ed" stroke-opacity=".38" stroke-width="1.5" stroke-dasharray="2 18"/><path d="M260 31 A211 211 0 0 1 426 111" fill="none" stroke="url(#cyan)" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/></g>
+<g class="spin-a" fill="none" filter="url(#glow)">
+  <ellipse cx="260" cy="242" rx="190" ry="76" stroke="url(#cyan)" stroke-width="2.5"/>
+  <ellipse cx="260" cy="242" rx="190" ry="76" stroke="#48e5ed" stroke-opacity=".28" stroke-width="9"/>
+  <circle cx="450" cy="242" r="7" fill="#e7ffff" stroke="#48e5ed" stroke-width="2"/>
+  <circle cx="70" cy="242" r="5" fill="#48e5ed"/>
+</g>
+<g class="spin-b" fill="none" filter="url(#glow)">
+  <ellipse cx="260" cy="242" rx="172" ry="62" transform="rotate(58 260 242)" stroke="url(#crimson)" stroke-width="2.6"/>
+  <ellipse cx="260" cy="242" rx="172" ry="62" transform="rotate(58 260 242)" stroke="#ff405d" stroke-opacity=".22" stroke-width="9"/>
+  <circle cx="260" cy="70" r="6" fill="#fff0f4" stroke="#ff405d" stroke-width="2"/>
+  <circle cx="260" cy="414" r="5" fill="#ff405d"/>
+</g>
+<g class="spin-d" fill="none">
+  <circle cx="260" cy="242" r="142" stroke="#a58bff" stroke-opacity=".68" stroke-width="1.5" stroke-dasharray="3 9"/>
+  <path d="M260 92 A150 150 0 0 1 386 160" stroke="#a58bff" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M260 392 A150 150 0 0 1 134 324" stroke="#48e5ed" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+</g>
+<circle cx="260" cy="242" r="115" fill="#48e5ed" opacity=".09" filter="url(#soft)"/>
+<circle cx="260" cy="242" r="97" fill="url(#sphere)" stroke="#48e5ed" stroke-opacity=".84" stroke-width="2" filter="url(#glow)"/>
+<g clip-path="url(#globeClip)" fill="none">
+  <g class="spin-c" stroke="#aafaff" stroke-opacity=".35" stroke-width="1.2">
+    <ellipse cx="260" cy="242" rx="34" ry="96"/><ellipse cx="260" cy="242" rx="68" ry="96"/>
+    <path d="M164 242H356M178 207Q260 228 342 207M178 277Q260 256 342 277"/>
+  </g>
+  <path class="scan-arc" d="M156 242H364" stroke="#eaffff" stroke-width="3" stroke-linecap="round" stroke-dasharray="24 190" filter="url(#glow)"/>
+</g>
+<g class="pulse-core" filter="url(#glow)">
+  <path d="M260 187L304 204V239C304 271 285 295 260 309C235 295 216 271 216 239V204Z" fill="#08131e" fill-opacity=".78" stroke="url(#cyan)" stroke-width="3"/>
+  <path d="M238 245L253 260L283 224" fill="none" stroke="#e8ffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="260" cy="242" r="4" fill="#48e5ed"/>
+</g>
+<g fill="none" stroke="#48e5ed" stroke-opacity=".45" stroke-width="1">
+  <path d="M260 10V52M260 432V474M28 242H70M450 242H492"/>
+  <path d="M100 82L129 111M391 373L420 402M100 402L129 373M391 111L420 82" stroke-dasharray="3 6"/>
+</g>
+<g font-family="'IBM Plex Mono',monospace" text-anchor="middle">
+  <text x="260" y="492" fill="#48e5ed" font-size="11" letter-spacing="4">XEBAC HAT / LIVE DEFENSE CORE</text>
+  <text x="260" y="509" fill="#8293a2" font-size="8" letter-spacing="2">BUILD • VERIFY • DEFEND</text>
+</g>
+</svg>
